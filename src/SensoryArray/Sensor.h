@@ -20,6 +20,7 @@ public:
 	//sensor name, pin, boardid
 	Sensor(String, int, int);
 	int takeMeasurement(void);
+	void changeSamplingRate(int);
 };
 
 #endif

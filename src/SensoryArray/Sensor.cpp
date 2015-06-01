@@ -35,3 +35,8 @@ int Sensor::takeMeasurement(void)
     timeLastSampled = millis();
     return measurement;
 	}
+
+void Sensor::changeSamplingRate(int newrate)
+  {
+    samplingRate = newrate;
+  }
