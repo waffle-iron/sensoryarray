@@ -93,6 +93,11 @@ void execCmd(String myCmd)
         sensorList[sensorId].test(param1);
         Serial.println("Cmd recognized: test");
       }
+    else if (cmd=="getdetails")
+      {
+        sensorList[sensorId].getDetails();
+        Serial.println("Cmd recognized: getDetails");
+      }
     else 
       {
         Serial.println("Cmd not recognized");

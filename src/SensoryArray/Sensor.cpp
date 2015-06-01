@@ -64,3 +64,23 @@ void Sensor::test()
   {
     testCycles = testCycles;
   }
+
+//Send details of sensor object to remote (over serial)
+void Sensor::getDetails(void)
+{
+   String sensorDetails ="{\n";
+  sensorDetails +=
+        " \"boardId\" : " + String(boardId) + ",\n"
+      + " \"sensorName\" : \"" + String(sensorName) + "\" ,\n"
+      + " \"sensorId\" : \"" + String(sensorId) + "\" ,\n"
+      + " \"pin\" : " + String(Pin) + " ,\n"
+      + " \"sensorType\" : " + String(sensorType) + ",\n"
+      + " \"samplingRate\" : " + String(samplingRate) + "\n"
+      + " \"timeLastSampled\" : " + String(timeLastSampled) + "\n"
+      + " \"testAvailable\" : " + String(testAvailable) + "\n"
+      + " \"testPin\" : " + String(testPin) + "\n"
+      + " \"testCycles\" : " + String(testCycles) + "\n"
+      + " }"
+  ;
+  Serial.println(sensorDetails);
+}

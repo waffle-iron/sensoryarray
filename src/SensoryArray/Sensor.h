@@ -25,6 +25,7 @@ public:
 	int takeMeasurement(void);
 	void changeSamplingRate(int);
 	void test(int);
+	void getDetails(void);
 };
 
 #endif
