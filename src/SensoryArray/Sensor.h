@@ -16,11 +16,15 @@ public:
 	int sensorType;
 	unsigned long samplingRate;
 	unsigned long timeLastSampled;
+	bool testAvailable;
+	int testPin;
+	int testCycles;
 	
 	//sensor name, pin, boardid
-	Sensor(String, int, int);
+	Sensor(String, int, int, int);
 	int takeMeasurement(void);
 	void changeSamplingRate(int);
+	void test(int);
 };
 
 #endif

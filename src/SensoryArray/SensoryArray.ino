@@ -78,14 +78,24 @@ void execCmd(String myCmd)
     int param1End = myCmd.indexOf(")");
     int param1 =(param1Start==param1End+1? "":myCmd.substring(param1Start,param1End) ).toInt();
   
-    if (cmd=="takemeasurement"){
+    if (cmd=="takemeasurement")
+      {
         sensorList[sensorId].takeMeasurement();
         Serial.println("Cmd recognized: takeMeasurement");
-        }
-    else if (cmd=="changesamplingrate"){
+      }
+    else if (cmd=="changesamplingrate")
+      {
         sensorList[sensorId].changeSamplingRate(param1);
         Serial.println("Cmd recognized: changeSamplingRate");
       }
-    else {Serial.println("Cmd not recognized");}
+    else if (cmd=="test")
+      {
+        sensorList[sensorId].test(param1);
+        Serial.println("Cmd recognized: test");
+      }
+    else 
+      {
+        Serial.println("Cmd not recognized");
+      }
     
   }
