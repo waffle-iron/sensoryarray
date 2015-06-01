@@ -42,6 +42,17 @@ void loop()
     {
         String cmd ="";
         cmd = Serial.readStringUntil('\n');
+        //cleanse string
+          cmd.trim();
+          cmd.toLowerCase();
+          
+            char nullptr =0;
+            char newline = 10;
+            char tab = 11;
+            char carriagereturn = 13;
+            cmd.replace(newline,nullptr);
+            cmd.replace(tab,nullptr);
+            cmd.replace(carriagereturn,nullptr);
         execCmd(cmd);
     }
 
