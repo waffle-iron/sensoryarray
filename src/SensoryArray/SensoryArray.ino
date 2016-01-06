@@ -1,12 +1,15 @@
 #include "Sensor.h"
+#include "Board.h"
 //device constants
   //So that remote can idenify this board from others
-  const int boardId = 1;
+Board myboard = Board(1,"prototypeUno");
+
+
 
 //instantiate array of sensors (one record per sensor on board)
-  Sensor sensorList[]={
-                        Sensor("distanceSensor",A0,boardId)
-                      };
+  Sensor sensorList[]={Sensor("distanceSensor",A0,myboard.boardId,0)};
+  myboard.sensorList[]={Sensor("distanceSensor",A0,myboard.boardId,0)}; //myboard does not name a type?
+  
 
 const int SensorCount = (sizeof(sensorList)/sizeof(sensorList[0]));
 
@@ -34,7 +37,9 @@ void loop()
             sensorList[i].takeMeasurement();
         }
         else
-        {}  
+        {
+          //Do nothing 
+        }  
     }
 
     //check for possible input command on serial receive buffer

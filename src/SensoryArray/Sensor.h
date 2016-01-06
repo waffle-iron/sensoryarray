@@ -20,7 +20,7 @@ public:
 	int testPin;
 	int testCycles;
 	
-	//sensor name, pin, boardid
+	//sensor name, pin, boardid, testpin
 	Sensor(String, int, int, int);
 	int takeMeasurement(void);
 	void changeSamplingRate(int);
