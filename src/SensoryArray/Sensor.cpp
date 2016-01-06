@@ -1,4 +1,3 @@
-//#include "Arduino.h"
 #include "Sensor.h"
 
 //Sensor Constructor
@@ -33,7 +32,7 @@ int Sensor::takeMeasurement(void)
     //take measurement
     int measurement = analogRead(Pin);
 
-    if (testCycles)>0
+    if (testCycles>0)
     {
       digitalWrite(testPin, LOW);
       testCycles = testCycles--;
@@ -60,7 +59,7 @@ void Sensor::changeSamplingRate(int newrate)
     samplingRate = newrate;
   }
 
-void Sensor::test()
+void Sensor::test(int testCycles)
   {
     testCycles = testCycles;
   }
