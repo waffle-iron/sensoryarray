@@ -12,9 +12,6 @@ public:
 	Board(int,String);
   Sensor sensorList[20]; 
   //int countSensors(void);
-  String listenforCmd(void);
-  // exec cmd?
-  
 };
 
 
