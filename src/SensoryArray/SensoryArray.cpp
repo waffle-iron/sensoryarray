@@ -13,21 +13,16 @@ Board myboard = Board(1,"prototypeUno");
 
 const int SensorCount = (sizeof(sensorList)/sizeof(sensorList[0]));
 
-
-void setup()
-  {
+int main(){
       Serial.begin(9600);
       Serial.print("Initializing SensorArray");
 
       //Make sensorId attribute same as index 
       int i=0;
       for (i=0 ; i < SensorCount ; i++)
-        {sensorList[i].sensorId = i;} 
-  }
-
+        {sensorList[i].sensorId = i;}
   
-void loop()
-  {
+  while (1){
     //loop throught all sensors, if time to take new measurement, take measurement
     int i =0;
     for (i=0 ; i < SensorCount ; i++)
@@ -61,9 +56,11 @@ void loop()
         execCmd(cmd);
     }
 
-  }
- 
+  }  
+  
+}
 
+  
 void execCmd(String myCmd)
   {
     /*
